@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Main Dark Theme (Like Image) */
+    --background: 226 23% 11%;   /* #151722 very dark blueish-grey */
+    --foreground: 0 0% 100%;     /* White text */
+
+    --card: 225 18% 16%;         /* #222530 slightly lighter card background */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 225 18% 16%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Accent Colors */
+    --primary: 40 100% 55%;      /* Golden Yellow (#facc15) */
+    --primary-foreground: 226 23% 11%; 
+
+    --secondary: 198 100% 50%;   /* Bright cyan (#00bfff approx for the "Analyse" button) */
+    --secondary-foreground: 226 23% 11%;
+
+    --muted: 225 18% 22%;        /* Muted elements */
+    --muted-foreground: 215 14% 65%; /* Grayish text */
+
+    --accent: 225 18% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 225 18% 25%;
+    --input: 225 18% 20%;
+    --ring: 40 100% 55%;
+
+    --radius: 0.75rem; /* Rounded corners for the modern feel */
+  }
+
+  .dark {
+    --background: 226 23% 11%;
+    --foreground: 0 0% 100%;
+    --card: 225 18% 16%;
+    --card-foreground: 0 0% 100%;
+    --popover: 225 18% 16%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 40 100% 55%;
+    --primary-foreground: 226 23% 11%;
+    --secondary: 198 100% 50%;
+    --secondary-foreground: 226 23% 11%;
+    --muted: 225 18% 22%;
+    --muted-foreground: 215 14% 65%;
+    --accent: 225 18% 25%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 18% 25%;
+    --input: 225 18% 20%;
+    --ring: 40 100% 55%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Base custom classes to replace the old neubrutal ones to avoid compilation errors */
+.neu-brutal {
+  @apply border-0 shadow-md;
+}
+.neu-brutal-hover:hover {
+  @apply shadow-lg translate-y-[-2px] transition-all;
+}
+.neu-brutal-active:active {
+  @apply translate-y-0 scale-95;
+}
+.neu-brutal-header {
+  @apply bg-transparent p-0 text-xl font-bold;
+}
+
+/* Loading Spin Animation */
+.loading-spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
